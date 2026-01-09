@@ -45,13 +45,12 @@ const Home = () => {
                     <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                         I'm a <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                            <Typewriter text="Software Student." />
+                            <Typewriter text="Software Developer Student." />
                         </span>
                     </h1>
 
-                    <p className="text-xl text-slate-400 mb-8 max-w-lg leading-relaxed">
-                        A creative technologist specializing in <span className="text-white">HCI</span> and building high-fidelity digital experiences.
-                        Merging design with code to shape the future.
+                    <p className="text-lg md:text-xl text-slate-400 mb-8 max-w-2xl leading-relaxed">
+                        I'm currently pursuing my degree in Software Development at UTEM. I specialize in both frontend and backend development, transforming ideas into functional digital experiences using modern technologies.
                     </p>
 
                     <div className="flex gap-4 flex-wrap">

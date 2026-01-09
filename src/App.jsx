@@ -1,10 +1,11 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import IntroScreen from './components/IntroScreen';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
-import Academic from './pages/Academic';
+import Journey from './pages/Journey';
 import Projects from './pages/Projects';
 import Skills from './pages/Skills';
 import ProjectDetails from './pages/ProjectDetails';
@@ -21,20 +22,28 @@ const ScrollToTop = () => {
 }
 
 function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
   return (
     <Router>
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="academic" element={<Academic />} />
-          <Route path="projects" element={<Projects />} />
-          <Route path="skills" element={<Skills />} />
-          <Route path="project/:id" element={<ProjectDetails />} />
-          <Route path="contact" element={<Contact />} />
-        </Route>
-      </Routes>
+      <AnimatePresence mode='wait'>
+        {showSplash ? (
+          <IntroScreen key="splash" onComplete={() => setShowSplash(false)} />
+        ) : (
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="about" element={<About />} />
+              <Route path="journey" element={<Journey />} />
+              <Route path="projects" element={<Projects />} />
+              <Route path="skills" element={<Skills />} />
+              <Route path="project/:id" element={<ProjectDetails />} />
+              <Route path="contact" element={<Contact />} />
+            </Route>
+          </Routes>
+        )}
+      </AnimatePresence>
     </Router>
   );
 }

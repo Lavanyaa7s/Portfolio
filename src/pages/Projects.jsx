@@ -2,11 +2,15 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 
+import hciPortfolioImg from '../assets/projects/hci-portfolio.png';
+import mobileAppImg from '../assets/projects/mobile-app.png';
+import threeDAnimImg from '../assets/projects/3d-animation.png';
+
 const Projects = () => {
     const projects = [
-        { id: 1, title: 'HCI Portfolio Website', category: 'Web Dev', image: 'https://via.placeholder.com/600x400' },
-        { id: 2, title: 'Mobile App Prototype', category: 'UI/UX', image: 'https://via.placeholder.com/600x400' },
-        { id: 3, title: '3D Animation Project', category: 'Multimedia', image: 'https://via.placeholder.com/600x400' },
+        { id: 1, title: 'HCI Portfolio Website', category: 'Web Dev', image: hciPortfolioImg },
+        { id: 2, title: 'Mobile App Prototype', category: 'UI/UX', image: mobileAppImg },
+        { id: 3, title: '3D Animation Project', category: 'Multimedia', image: threeDAnimImg },
     ];
 
     return (

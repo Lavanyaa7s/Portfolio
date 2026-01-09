@@ -1,21 +1,31 @@
 import { motion } from 'framer-motion';
-import { GraduationCap, Calendar } from 'lucide-react';
+import { GraduationCap, Calendar, Briefcase } from 'lucide-react';
 
-const Academic = () => {
+const Journey = () => {
     const history = [
         {
+            type: 'education',
             institution: 'Universiti Teknikal Malaysia Melaka (UTeM)',
             degree: 'Bachelor of Computer Science (Software Development)',
             year: '2024 - Present',
             desc: 'Currently in Year 2. Majoring in Software Development.'
         },
         {
+            type: 'work',
+            institution: 'Integro Technologies',
+            degree: 'Business Analyst Intern',
+            year: '21 Aug 2023 - 5 Jan 2024',
+            desc: 'Completed internship as a Business Analyst.'
+        },
+        {
+            type: 'education',
             institution: 'Politeknik Sultan Idris Shah, Sabak Bernam',
             degree: 'Diploma in Information Technology (Digital Technology)',
             year: '2021 - 2024',
             desc: 'CGPA: 3.81'
         },
         {
+            type: 'education',
             institution: 'Sekolah Menengah Kebangsaan Paya Rumput, Melaka',
             degree: 'Sijil Pelajaran Malaysia (SPM)',
             year: '2015 - 2019',
@@ -24,8 +34,8 @@ const Academic = () => {
     ];
 
     return (
-        <div className="container mx-auto px-6">
-            <h1 className="text-4xl font-bold mb-12 text-center">Academic <span className="text-gradient">History</span></h1>
+        <div className="container mx-auto px-6 py-10">
+            <h1 className="text-4xl font-bold mb-12 text-center">My <span className="text-gradient">Journey</span></h1>
 
             <div className="max-w-3xl mx-auto relative border-l-2 border-slate-700 pl-8 space-y-12">
                 {history.map((item, index) => (
@@ -36,12 +46,16 @@ const Academic = () => {
                         transition={{ delay: index * 0.2 }}
                         className="glass-panel p-6 relative"
                     >
-                        <div className="absolute -left-[41px] top-6 bg-primary p-2 rounded-full border-4 border-slate-900">
-                            <GraduationCap size={20} className="text-white" />
+                        <div className={`absolute -left-[41px] top-6 p-2 rounded-full border-4 border-slate-900 ${item.type === 'work' ? 'bg-secondary' : 'bg-primary'}`}>
+                            {item.type === 'work' ? (
+                                <Briefcase size={20} className="text-white" />
+                            ) : (
+                                <GraduationCap size={20} className="text-white" />
+                            )}
                         </div>
-                        <div className="flex justify-between items-start mb-2">
+                        <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2 gap-2">
                             <h2 className="text-xl font-bold text-white">{item.institution}</h2>
-                            <span className="flex items-center text-sm text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
+                            <span className={`inline-flex items-center text-xs md:text-sm px-3 py-1 rounded-full border ${item.type === 'work' ? 'text-secondary bg-secondary/10 border-secondary/20' : 'text-primary bg-primary/10 border-primary/20'}`}>
                                 <Calendar size={14} className="mr-2" /> {item.year}
                             </span>
                         </div>
@@ -54,4 +68,4 @@ const Academic = () => {
     );
 };
 
-export default Academic;
+export default Journey;
