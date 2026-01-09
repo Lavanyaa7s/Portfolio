@@ -11,13 +11,6 @@ const Journey = () => {
             desc: 'Currently in Year 2. Majoring in Software Development.'
         },
         {
-            type: 'work',
-            institution: 'Integro Technologies',
-            degree: 'Business Analyst Intern',
-            year: '21 Aug 2023 - 5 Jan 2024',
-            desc: 'Completed internship as a Business Analyst.'
-        },
-        {
             type: 'education',
             institution: 'Politeknik Sultan Idris Shah, Sabak Bernam',
             degree: 'Diploma in Information Technology (Digital Technology)',
@@ -35,9 +28,9 @@ const Journey = () => {
 
     return (
         <div className="container mx-auto px-6 py-10">
-            <h1 className="text-4xl font-bold mb-12 text-center">My <span className="text-gradient">Journey</span></h1>
+            <h1 className="text-4xl font-bold mb-12 text-center">Academic <span className="text-gradient">Journey</span></h1>
 
-            <div className="max-w-3xl mx-auto relative border-l-2 border-slate-700 pl-8 space-y-12">
+            <div className="max-w-3xl relative border-l-2 border-slate-700 pl-8 space-y-12 ml-4 md:mx-auto">
                 {history.map((item, index) => (
                     <motion.div
                         key={index}

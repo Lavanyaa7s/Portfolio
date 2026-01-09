@@ -6,6 +6,7 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
 import Journey from './pages/Journey';
+import Gallery from './pages/Gallery';
 import Projects from './pages/Projects';
 import Skills from './pages/Skills';
 import ProjectDetails from './pages/ProjectDetails';
@@ -36,6 +37,7 @@ function App() {
               <Route index element={<Home />} />
               <Route path="about" element={<About />} />
               <Route path="journey" element={<Journey />} />
+              <Route path="gallery" element={<Gallery />} />
               <Route path="projects" element={<Projects />} />
               <Route path="skills" element={<Skills />} />
               <Route path="project/:id" element={<ProjectDetails />} />

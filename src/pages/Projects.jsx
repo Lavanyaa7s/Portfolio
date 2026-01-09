@@ -4,20 +4,22 @@ import { ArrowUpRight } from 'lucide-react';
 
 import hciPortfolioImg from '../assets/projects/hci-portfolio.png';
 import mobileAppImg from '../assets/projects/mobile-app.png';
-import threeDAnimImg from '../assets/projects/3d-animation.png';
+import tourismImg from '../assets/projects/tour cover.png';
+import fingerprintImg from '../assets/projects/fingerprint.png';
 
 const Projects = () => {
     const projects = [
         { id: 1, title: 'HCI Portfolio Website', category: 'Web Dev', image: hciPortfolioImg },
-        { id: 2, title: 'Mobile App Prototype', category: 'UI/UX', image: mobileAppImg },
-        { id: 3, title: '3D Animation Project', category: 'Multimedia', image: threeDAnimImg },
+        { id: 2, title: 'Event Booking System', category: 'Mobile Dev', image: mobileAppImg },
+        { id: 3, title: 'TripTastic Travel Package System', category: 'Software Development', image: tourismImg },
+        { id: 4, title: 'SecureSwipe (Fingerprint Attendance System)', category: 'Web Dev', image: fingerprintImg },
     ];
 
     return (
         <div className="container mx-auto px-6">
             <h1 className="text-4xl font-bold mb-12 text-center">My <span className="text-gradient">Projects</span></h1>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {projects.map((project, index) => (
                     <motion.div
                         key={project.id}
