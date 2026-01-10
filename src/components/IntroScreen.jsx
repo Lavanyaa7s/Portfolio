@@ -62,8 +62,8 @@ const IntroScreen = ({ onComplete }) => {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 font-['Michroma'] text-4xl md:text-6xl tracking-wider text-white">
-                <div className="flex items-center gap-4">
+            <div className="relative z-10 font-['Michroma'] text-3xl md:text-6xl tracking-wider text-white">
+                <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
                     <motion.span
                         initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
                         animate={{
