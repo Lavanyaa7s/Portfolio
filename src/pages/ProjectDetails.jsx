@@ -17,7 +17,7 @@ const ProjectDetails = () => {
             description: "This portfolio itself is a testament to my frontend development skills. Designed and developed from scratch, it showcases my journey as a software developer student. The application features a modern, responsive interface built with React and Tailwind CSS, enhanced with fluid animations using Framer Motion. Key implementations include a custom intro splash screen, interactive navigation, and a cohesive glassmorphism design system that provides a premium user experience.",
             tech: ['React', 'Tailwind CSS', 'Framer Motion', 'Vite', 'Lucide React'],
             image: hciPreview,
-            link: 'https://lavanyaaselapan.netlify.app'
+            link: 'https://lavanyaa-selapan.netlify.app'
         },
         2: {
             title: 'Event Booking System',
