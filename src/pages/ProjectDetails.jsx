@@ -7,6 +7,8 @@ import tourDemo from '../assets/tourdemo.mp4';
 import hciPreview from '../assets/Portfolio.png';
 import tourismPreview from '../assets/projects/tour cover.png';
 import secureSwipePreview from '../assets/projects/fingerprint.png';
+import neptuneGymPreview from '../assets/projects/Neptune Gym.jpg';
+import campusConnectPreview from '../assets/projects/CampusConnect.jpg';
 
 const ProjectDetails = () => {
     const { id } = useParams();
@@ -38,6 +40,19 @@ const ProjectDetails = () => {
             tech: ['HTML/CSS/JS', 'Python', 'Django', 'MySQL', 'Biometric Integration'],
             image: secureSwipePreview,
             video: fingerprintDemo
+        },
+        5: {
+            title: 'Neptune Endless Gym',
+            description: "A modern web application built for fitness enthusiasts and gym members. Neptune Endless Gym features interactive exercise catalogs, workout tracking concepts, and a sleek, energetic interface designed to motivate users on their fitness journey. Developed with a focus on responsive UI/UX and seamless performance across all devices.",
+            tech: ['React', 'Web Dev', 'Responsive UI/UX', 'Vercel'],
+            image: neptuneGymPreview,
+            link: 'https://neptune-endless-gym.vercel.app'
+        },
+        6: {
+            title: 'CampusConnect',
+            description: "A centralized digital platform designed to bridge communication and networking gaps among university students. CampusConnect enables peer-to-peer collaboration, campus event sharing, academic discussions, and resource exchange in a secure student-focused environment.",
+            tech: ['Web Dev', 'Frontend Dev', 'UI/UX Design'],
+            image: campusConnectPreview
         }
     };
 

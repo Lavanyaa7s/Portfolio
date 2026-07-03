@@ -6,6 +6,8 @@ import hciPortfolioImg from '../assets/projects/hci-portfolio.png';
 import mobileAppImg from '../assets/projects/mobile-app.png';
 import tourismImg from '../assets/projects/tour cover.png';
 import fingerprintImg from '../assets/projects/fingerprint.png';
+import neptuneGymImg from '../assets/projects/Neptune Gym.jpg';
+import campusConnectImg from '../assets/projects/CampusConnect.jpg';
 
 const Projects = () => {
     const projects = [
@@ -13,6 +15,8 @@ const Projects = () => {
         { id: 2, title: 'Event Booking System', category: 'Mobile Dev', image: mobileAppImg },
         { id: 3, title: 'TripTastic Travel Package System', category: 'Software Development', image: tourismImg },
         { id: 4, title: 'SecureSwipe (Fingerprint Attendance System)', category: 'Web Dev', image: fingerprintImg },
+        { id: 5, title: 'Neptune Endless Gym', category: 'Web Dev', image: neptuneGymImg },
+        { id: 6, title: 'CampusConnect', category: 'Web Dev', image: campusConnectImg },
     ];
 
     return (
