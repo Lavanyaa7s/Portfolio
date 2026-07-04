@@ -21,7 +21,7 @@ const CursorBackground = () => {
     }, [mouseX, mouseY]);
 
     // Use useMotionTemplate to create a reactive gradient string
-    const background = useMotionTemplate`radial-gradient(600px circle at ${springX}px ${springY}px, rgba(139, 92, 246, 0.15), transparent 60%)`;
+    const background = useMotionTemplate`radial-gradient(600px circle at ${springX}px ${springY}px, rgba(255, 255, 255, 0.65), transparent 70%)`;
 
     return (
         <motion.div

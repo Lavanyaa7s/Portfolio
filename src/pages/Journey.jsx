@@ -8,7 +8,7 @@ const Journey = () => {
             institution: 'Universiti Teknikal Malaysia Melaka (UTeM)',
             degree: 'Bachelor of Computer Science (Software Development)',
             year: '2024 - Present',
-            desc: 'Currently in Year 2. Majoring in Software Development.'
+            desc: 'Currently in Year 3. Majoring in Software Development.'
         },
         {
             type: 'education',
@@ -27,33 +27,40 @@ const Journey = () => {
     ];
 
     return (
-        <div className="container mx-auto px-6 py-10">
-            <h1 className="text-4xl font-bold mb-12 text-center">Academic <span className="text-gradient">Journey</span></h1>
+        <div className="container mx-auto px-4 md:px-6 pt-8 pb-16">
+            <div className="text-center max-w-2xl mx-auto mb-16">
+                <div className="inline-block bg-white border border-black/5 shadow-sm px-4 py-1.5 rounded-full text-xs font-semibold text-slate-500 mb-4">
+                    Education & Experience
+                </div>
+                <h1 className="text-3xl sm:text-5xl font-bold text-[#111111] tracking-tight">
+                    Academic Journey.
+                </h1>
+            </div>
 
-            <div className="max-w-3xl relative border-l-2 border-slate-700 pl-8 space-y-12 ml-4 md:mx-auto">
+            <div className="max-w-3xl relative border-l-2 border-black/10 pl-8 space-y-10 ml-4 md:mx-auto">
                 {history.map((item, index) => (
                     <motion.div
                         key={index}
-                        initial={{ opacity: 0, x: -20 }}
+                        initial={{ opacity: 0, x: -15 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.2 }}
-                        className="glass-panel p-6 relative"
+                        transition={{ delay: index * 0.15 }}
+                        className="glass-panel p-8 bg-white shadow-sm hover:shadow transition-all relative group"
                     >
-                        <div className={`absolute -left-[41px] top-6 p-2 rounded-full border-4 border-slate-900 ${item.type === 'work' ? 'bg-secondary' : 'bg-primary'}`}>
+                        <div className="absolute -left-[41px] top-8 p-2 rounded-full border-4 border-[#ebebeb] bg-[#111111] group-hover:scale-110 transition-transform">
                             {item.type === 'work' ? (
-                                <Briefcase size={20} className="text-white" />
+                                <Briefcase size={18} className="text-white" />
                             ) : (
-                                <GraduationCap size={20} className="text-white" />
+                                <GraduationCap size={18} className="text-white" />
                             )}
                         </div>
-                        <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2 gap-2">
-                            <h2 className="text-xl font-bold text-white">{item.institution}</h2>
-                            <span className={`inline-flex items-center text-xs md:text-sm px-3 py-1 rounded-full border ${item.type === 'work' ? 'text-secondary bg-secondary/10 border-secondary/20' : 'text-primary bg-primary/10 border-primary/20'}`}>
-                                <Calendar size={14} className="mr-2" /> {item.year}
+                        <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3 gap-2">
+                            <h2 className="text-xl font-bold text-[#111111] leading-snug">{item.institution}</h2>
+                            <span className="inline-flex items-center text-xs font-bold px-3.5 py-1.5 rounded-full bg-gray-100 border border-black/5 text-[#111111] shrink-0">
+                                <Calendar size={13} className="mr-1.5" /> {item.year}
                             </span>
                         </div>
-                        <h3 className="text-lg text-slate-300 font-medium mb-2">{item.degree}</h3>
-                        <p className="text-slate-400">{item.desc}</p>
+                        <h3 className="text-base text-slate-700 font-bold mb-2">{item.degree}</h3>
+                        <p className="text-sm font-medium text-slate-500">{item.desc}</p>
                     </motion.div>
                 ))}
             </div>

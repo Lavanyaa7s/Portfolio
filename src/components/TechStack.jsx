@@ -1,46 +1,36 @@
 import { motion } from 'framer-motion';
-import { Database, Layout, Smartphone, Code2, Terminal, Cpu } from 'lucide-react';
+import { Database, Layout, Smartphone, Code2, Terminal, Cpu, Palette, Figma } from 'lucide-react';
 
 const TechStack = () => {
-    const icons = [
-        { icon: <Code2 size={30} />, label: 'React', delay: 0 },
-        { icon: <Terminal size={30} />, label: 'Python', delay: 0.5 },
-        { icon: <Database size={30} />, label: 'SQL', delay: 1.0 },
-        { icon: <Layout size={30} />, label: 'UI/UX', delay: 0.2 },
-        { icon: <Smartphone size={30} />, label: 'Mobile', delay: 0.7 },
-        { icon: <Cpu size={30} />, label: 'System', delay: 1.2 },
+    const techItems = [
+        { icon: <Code2 size={20} />, label: 'React' },
+        { icon: <Terminal size={20} />, label: 'Python' },
+        { icon: <Layout size={20} />, label: 'Tailwind CSS' },
+        { icon: <Palette size={20} />, label: 'UI/UX Design' },
+        { icon: <Cpu size={20} />, label: 'C++' },
+        { icon: <Database size={20} />, label: 'SQL / MySQL' },
+        { icon: <Smartphone size={20} />, label: 'Mobile Dev' },
+        { icon: <Figma size={20} />, label: 'Figma / Canva' },
     ];
 
     return (
-        <div className="relative w-full max-w-lg mx-auto h-64 flex items-center justify-center">
-            {/* Central glowing core */}
-            <div className="absolute w-32 h-32 bg-primary/20 rounded-full blur-3xl animate-pulse-slow"></div>
-
-            <div className="relative w-full h-full">
-                {icons.map((item, index) => (
+        <div className="w-full pt-8 border-t border-black/5 mt-10">
+            <p className="text-xs uppercase tracking-widest text-center text-slate-400 font-semibold mb-6">
+                Technical Stack & Tools
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
+                {techItems.map((item, index) => (
                     <motion.div
                         key={index}
-                        className="absolute p-4 glass-panel rounded-full text-white/80 hover:text-white hover:border-primary transition-colors cursor-pointer"
-                        animate={{
-                            y: [0, -15, 0],
-                        }}
-                        transition={{
-                            duration: 4,
-                            repeat: Infinity,
-                            repeatType: "reverse",
-                            ease: "easeInOut",
-                            delay: item.delay,
-                        }}
-                        style={{
-                            // Position items in a semi-random cloud or circle (simplified here for grid-like feel)
-                            left: `${(index % 3) * 35 + 10}%`,
-                            top: `${Math.floor(index / 3) * 40 + 10}%`,
-                        }}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.08, duration: 0.4 }}
+                        className="flex items-center gap-2 text-slate-600 hover:text-black font-semibold text-sm md:text-base py-2 px-3 rounded-xl hover:bg-black/5 transition-all cursor-pointer group"
                     >
-                        {item.icon}
-                        <span className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs opacity-0 hover:opacity-100 transition-opacity whitespace-nowrap">
-                            {item.label}
+                        <span className="text-slate-400 group-hover:text-black transition-colors">
+                            {item.icon}
                         </span>
+                        <span>{item.label}</span>
                     </motion.div>
                 ))}
             </div>

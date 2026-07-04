@@ -7,12 +7,18 @@ export default {
     theme: {
         extend: {
             colors: {
-                primary: 'var(--primary)',
-                secondary: 'var(--secondary)',
-                accent: 'var(--accent)',
+                primary: '#111111',
+                secondary: '#555555',
+                accent: '#2563eb',
+                card: '#ffffff',
+                canvas: '#ebebeb',
             },
             fontFamily: {
                 sans: ['Outfit', 'sans-serif'],
+            },
+            borderRadius: {
+                '3xl': '1.75rem',
+                '4xl': '2.25rem',
             },
             animation: {
                 'float': 'float 6s ease-in-out infinite',
@@ -21,7 +27,7 @@ export default {
             keyframes: {
                 float: {
                     '0%, 100%': { transform: 'translateY(0)' },
-                    '50%': { transform: 'translateY(-20px)' },
+                    '50%': { transform: 'translateY(-10px)' },
                 }
             }
         },

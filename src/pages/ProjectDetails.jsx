@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Github, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ExternalLink } from 'lucide-react';
 
 import mobileDemo from '../assets/mobile-demo.mp4';
 import fingerprintDemo from '../assets/demo fingerprint.mp4';
@@ -63,31 +63,34 @@ const ProjectDetails = () => {
     };
 
     return (
-        <div className="container mx-auto px-6 pt-10">
-            <Link to="/projects" className="inline-flex items-center text-slate-400 hover:text-white mb-8 transition-colors">
+        <div className="container mx-auto px-4 md:px-6 pt-8 pb-16">
+            <Link
+                to="/projects"
+                className="inline-flex items-center text-slate-600 hover:text-black font-semibold text-sm mb-8 bg-white border border-black/5 shadow-sm px-5 py-2.5 rounded-full transition-all hover:bg-gray-50 hover:shadow"
+            >
                 <ArrowLeft size={16} className="mr-2" /> Back to Projects
             </Link>
 
-            <div className="glass-panel p-6 md:p-12">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
-                    <h1 className="text-3xl md:text-5xl font-bold text-white">{project.title}</h1>
+            <div className="glass-panel p-6 md:p-12 bg-white">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+                    <h1 className="text-3xl md:text-5xl font-bold text-[#111111] tracking-tight">{project.title}</h1>
                     <div className="flex gap-3">
                         {project.link && (
                             <a
                                 href={project.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="btn btn-primary flex items-center gap-2 text-sm"
+                                className="btn btn-primary flex items-center gap-2 text-sm px-6 py-3 shadow-md hover:shadow-lg"
                             >
-                                <ExternalLink size={16} /> Live Demo
+                                <ExternalLink size={16} /> Live Demo ↗
                             </a>
                         )}
                     </div>
                 </div>
 
-                <div className="overflow-hidden bg-slate-800/50 rounded-xl flex items-center justify-center mb-10 border border-white/5">
+                <div className="overflow-hidden bg-gray-100 rounded-2xl flex items-center justify-center mb-12 border border-black/5 shadow-inner">
                     {project.video ? (
-                        <video controls className="w-full h-auto max-h-[500px]">
+                        <video controls className="w-full h-auto max-h-[550px] rounded-2xl">
                             <source src={project.video} type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
@@ -95,29 +98,29 @@ const ProjectDetails = () => {
                         <img
                             src={project.image}
                             alt={project.title}
-                            className="w-full h-auto object-cover max-h-[500px]"
+                            className="w-full h-auto object-cover max-h-[550px] rounded-2xl"
                         />
                     ) : (
                         <div className="h-64 md:h-96 flex items-center justify-center w-full">
-                            <span className="text-slate-500 font-medium">Project Preview / Screenshot</span>
+                            <span className="text-slate-400 font-medium">Project Preview / Screenshot</span>
                         </div>
                     )}
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-10">
                     <div className="md:col-span-2">
-                        <h3 className="text-xl font-semibold mb-4 text-white flex items-center gap-2">
+                        <h3 className="text-xl font-bold mb-4 text-[#111111] flex items-center gap-2">
                             Project Overview
                         </h3>
-                        <p className="text-slate-300 leading-relaxed text-lg">
+                        <p className="text-slate-600 leading-relaxed text-base md:text-lg">
                             {project.description}
                         </p>
                     </div>
                     <div>
-                        <h3 className="text-xl font-semibold mb-4 text-white">Technologies Used</h3>
+                        <h3 className="text-xl font-bold mb-4 text-[#111111]">Technologies Used</h3>
                         <div className="flex flex-wrap gap-2">
                             {project.tech.map(tag => (
-                                <span key={tag} className="px-4 py-2 bg-primary/20 text-primary rounded-lg text-sm font-medium border border-primary/20 hover:bg-primary/30 transition-colors">
+                                <span key={tag} className="px-4 py-2 bg-gray-100 text-[#111111] rounded-full text-xs font-semibold border border-black/5 hover:bg-[#111111] hover:text-white transition-colors">
                                     {tag}
                                 </span>
                             ))}

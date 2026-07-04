@@ -5,15 +5,13 @@ const IntroScreen = ({ onComplete }) => {
     const [textVisible, setTextVisible] = useState(false);
 
     useEffect(() => {
-        // Reveal text after a short delay
         const textTimer = setTimeout(() => {
             setTextVisible(true);
-        }, 500);
+        }, 400);
 
-        // Initial display duration before starting exit
         const exitTimer = setTimeout(() => {
             onComplete();
-        }, 2500);
+        }, 2200);
 
         return () => {
             clearTimeout(textTimer);
@@ -23,56 +21,38 @@ const IntroScreen = ({ onComplete }) => {
 
     return (
         <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-[#09090b] overflow-hidden"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-[#ebebeb] overflow-hidden"
             initial={{ opacity: 1 }}
-            exit={{ opacity: 0, y: -50, transition: { duration: 0.8, ease: "easeInOut" } }}
+            exit={{ opacity: 0, y: -40, transition: { duration: 0.7, ease: "easeInOut" } }}
         >
-            {/* Background Gradients */}
+            {/* Soft Ambient Light Background */}
             <div className="absolute inset-0 pointer-events-none">
-                {/* Main purple fluid blob */}
                 <motion.div
                     animate={{
-                        scale: [1, 1.2, 1],
-                        rotate: [0, 90, 0],
-                        opacity: [0.4, 0.6, 0.4],
+                        scale: [1, 1.3, 1],
+                        opacity: [0.6, 0.9, 0.6],
                     }}
                     transition={{
-                        duration: 8,
+                        duration: 6,
                         repeat: Infinity,
                         ease: "easeInOut",
                     }}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-violet-600 rounded-full blur-[120px]"
-                />
-
-                {/* Secondary accent blob */}
-                <motion.div
-                    animate={{
-                        scale: [1, 1.5, 1],
-                        x: [0, 100, 0],
-                        y: [0, -50, 0],
-                        opacity: [0.3, 0.5, 0.3],
-                    }}
-                    transition={{
-                        duration: 10,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                    }}
-                    className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-fuchsia-600 rounded-full blur-[100px]"
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-white rounded-full blur-[100px]"
                 />
             </div>
 
             {/* Content */}
-            <div className="relative z-10 font-['Michroma'] text-3xl md:text-6xl tracking-wider text-white">
-                <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+            <div className="relative z-10 font-sans text-3xl md:text-6xl font-bold tracking-tight text-[#111111]">
+                <div className="flex items-center gap-3 md:gap-4">
                     <motion.span
-                        initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                        initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
                         animate={{
                             opacity: textVisible ? 1 : 0,
-                            y: textVisible ? 0 : 30,
-                            filter: textVisible ? "blur(0px)" : "blur(10px)"
+                            y: textVisible ? 0 : 20,
+                            filter: textVisible ? "blur(0px)" : "blur(8px)"
                         }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                        className="text-white drop-shadow-2xl"
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="text-[#111111]"
                     >
                         Lavanyaa
                     </motion.span>
@@ -80,29 +60,26 @@ const IntroScreen = ({ onComplete }) => {
                     <motion.span
                         initial={{ opacity: 0, scale: 0 }}
                         animate={{ opacity: textVisible ? 1 : 0, scale: textVisible ? 1 : 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                        className="text-gray-500 text-4xl md:text-6xl"
+                        transition={{ duration: 0.4, delay: 0.2 }}
+                        className="text-slate-400 font-light"
                     >
                         /
                     </motion.span>
 
                     <motion.span
-                        initial={{ opacity: 0, y: -30, filter: "blur(10px)" }}
+                        initial={{ opacity: 0, y: -20, filter: "blur(8px)" }}
                         animate={{
                             opacity: textVisible ? 1 : 0,
-                            y: textVisible ? 0 : -30,
-                            filter: textVisible ? "blur(0px)" : "blur(10px)"
+                            y: textVisible ? 0 : -20,
+                            filter: textVisible ? "blur(0px)" : "blur(8px)"
                         }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                        className="text-white drop-shadow-2xl"
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="text-[#111111]"
                     >
                         Selapan
                     </motion.span>
                 </div>
             </div>
-
-            {/* Texture overlay for authenticity */}
-            <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay pointer-events-none"></div>
         </motion.div>
     );
 };
