@@ -8,6 +8,8 @@ import tourismImg from '../assets/projects/tour cover.png';
 import fingerprintImg from '../assets/projects/fingerprint.png';
 import neptuneGymImg from '../assets/projects/Neptune Gym.jpg';
 import campusConnectImg from '../assets/projects/CampusConnect.jpg';
+import amirulPortfolioImg from '../assets/projects/amirul-portfolio.png';
+import galleryCafeImg from '../assets/projects/gallery-cafe.png';
 
 const Projects = () => {
     const projects = [
@@ -17,6 +19,8 @@ const Projects = () => {
         { id: 4, title: 'SecureSwipe (Fingerprint Attendance)', category: 'Web Dev', image: fingerprintImg },
         { id: 5, title: 'Neptune Endless Gym', category: 'Web Dev', image: neptuneGymImg },
         { id: 6, title: 'CampusConnect', category: 'Web Dev', image: campusConnectImg },
+        { id: 7, title: 'Amirul Ibrahim Portfolio', category: 'Web Dev', image: amirulPortfolioImg },
+        { id: 8, title: '175 Gallery Cafe', category: 'Web Dev', image: galleryCafeImg },
     ];
 
     return (

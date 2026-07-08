@@ -9,6 +9,8 @@ import tourismPreview from '../assets/projects/tour cover.png';
 import secureSwipePreview from '../assets/projects/fingerprint.png';
 import neptuneGymPreview from '../assets/projects/Neptune Gym.jpg';
 import campusConnectPreview from '../assets/projects/CampusConnect.jpg';
+import amirulPortfolioPreview from '../assets/projects/amirul-portfolio.png';
+import galleryCafePreview from '../assets/projects/gallery-cafe.png';
 
 const ProjectDetails = () => {
     const { id } = useParams();
@@ -53,6 +55,20 @@ const ProjectDetails = () => {
             description: "A centralized digital platform designed to bridge communication and networking gaps among university students. CampusConnect enables peer-to-peer collaboration, campus event sharing, academic discussions, and resource exchange in a secure student-focused environment.",
             tech: ['Web Dev', 'Frontend Dev', 'UI/UX Design'],
             image: campusConnectPreview
+        },
+        7: {
+            title: 'Amirul Ibrahim Portfolio',
+            description: "A modern, responsive personal developer portfolio website engineered with clean UI/UX principles, smooth animations, and high-performance frontend architecture. Built to showcase projects, technical expertise, and professional journey with an engaging, user-friendly interface.",
+            tech: ['React', 'Web Dev', 'Responsive UI/UX', 'Vercel', 'Frontend Architecture'],
+            image: amirulPortfolioPreview,
+            link: 'https://amirul-ibrahim-portfolio.vercel.app'
+        },
+        8: {
+            title: '175 Gallery Cafe',
+            description: "An artisanal cafe website and digital gallery crafted for 175 Gallery Cafe. Features an inviting digital menu, aesthetic visual presentation of culinary offerings, and a seamless responsive user interface designed to elevate the cafe's brand presence and customer engagement.",
+            tech: ['HTML/CSS/JS', 'Web Dev', 'UI/UX Design', 'GitHub Pages', 'Responsive Layout'],
+            image: galleryCafePreview,
+            link: 'https://lavanyaa7s.github.io/175-Gallery-Cafe/'
         }
     };
 
