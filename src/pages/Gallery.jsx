@@ -40,16 +40,13 @@ const Gallery = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {photos.map((photo, index) => (
-                        <motion.a
+                        <motion.div
                             key={photo.id}
-                            href={new URL(`../assets/${photo.image}`, import.meta.url).href}
-                            target="_blank"
-                            rel="noopener noreferrer"
                             initial={{ opacity: 0, y: 15 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.08 }}
-                            className="glass-panel overflow-hidden relative group h-64 md:h-72 bg-white shadow-sm hover:shadow-md m-1 block cursor-pointer"
+                            className="glass-panel overflow-hidden relative group h-64 md:h-72 bg-white shadow-sm hover:shadow-md m-1"
                         >
                             {/* Image */}
                             <img
@@ -69,9 +66,8 @@ const Gallery = () => {
                             <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 backdrop-blur-[2px] text-white">
                                 <h3 className="text-xl font-bold text-white mb-1">{photo.title}</h3>
                                 <p className="text-xs font-semibold text-gray-200">{photo.desc}</p>
-                                <span className="text-[10px] text-gray-300 mt-2 flex items-center gap-1">Click to enlarge ↗</span>
                             </div>
-                        </motion.a>
+                        </motion.div>
                     ))}
                 </div>
             </motion.div>
