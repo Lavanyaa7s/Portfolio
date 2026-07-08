@@ -3,7 +3,12 @@ import { Camera } from 'lucide-react';
 
 const Gallery = () => {
     const photos = [
-        { id: 1, title: "Dean's List Award", desc: 'Academic Excellence', image: 'dean_list.jpeg' },
+        { id: 10, title: 'FYP 1 Completed!', desc: 'Final Year Project milestone achieved', image: 'FYP 1 DONE.jpeg' },
+        { id: 11, title: 'Google Malaysia Visit', desc: 'Exploring tech industry innovation', image: 'Visited Google Malaysia.jpeg' },
+        { id: 12, title: 'Google AI Program', desc: 'Attending Build with AI workshop', image: 'Attended Google Ai program.jpeg' },
+        { id: 13, title: "Dean's List Award (2025/2026)", desc: 'Continuing academic excellence', image: 'Dean list for 2526.jpeg' },
+        { id: 14, title: 'FYP Development Progress', desc: 'Deep in code & building solutions', image: 'FYP progess.jpeg' },
+        { id: 1, title: "Dean's List Award (2024/2025)", desc: 'Academic Excellence', image: 'dean_list.jpeg' },
         { id: 2, title: 'Workshop Presentation', desc: 'Sharing technical insights', image: 'workshop1Presentation.jpeg' },
         { id: 3, title: 'Group Discussion', desc: 'Brainstorming with the team', image: 'discussion.jpeg' },
         { id: 4, title: 'UTeM Campus', desc: 'Beautiful evening at the university', image: 'utemenviromnet.jpeg' },
@@ -35,13 +40,16 @@ const Gallery = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {photos.map((photo, index) => (
-                        <motion.div
+                        <motion.a
                             key={photo.id}
+                            href={new URL(`../assets/${photo.image}`, import.meta.url).href}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             initial={{ opacity: 0, y: 15 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.08 }}
-                            className="glass-panel overflow-hidden relative group h-64 md:h-72 bg-white shadow-sm hover:shadow-md m-1"
+                            className="glass-panel overflow-hidden relative group h-64 md:h-72 bg-white shadow-sm hover:shadow-md m-1 block cursor-pointer"
                         >
                             {/* Image */}
                             <img
@@ -61,8 +69,9 @@ const Gallery = () => {
                             <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 backdrop-blur-[2px] text-white">
                                 <h3 className="text-xl font-bold text-white mb-1">{photo.title}</h3>
                                 <p className="text-xs font-semibold text-gray-200">{photo.desc}</p>
+                                <span className="text-[10px] text-gray-300 mt-2 flex items-center gap-1">Click to enlarge ↗</span>
                             </div>
-                        </motion.div>
+                        </motion.a>
                     ))}
                 </div>
             </motion.div>
