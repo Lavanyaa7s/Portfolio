@@ -8,8 +8,8 @@ import tourismImg from '../assets/projects/tour cover.png';
 import fingerprintImg from '../assets/projects/fingerprint.png';
 import neptuneGymImg from '../assets/projects/Neptune Gym.jpg';
 import campusConnectImg from '../assets/projects/CampusConnect.jpg';
-import amirulPortfolioImg from '../assets/projects/amirul-portfolio.png';
-import galleryCafeImg from '../assets/projects/gallery-cafe.png';
+import amirulPortfolioImg from '../assets/projects/AmirulPortfolio.png';
+import galleryCafeImg from '../assets/projects/175 Cfae.png';
 
 const Projects = () => {
     const projects = [

@@ -9,8 +9,8 @@ import tourismPreview from '../assets/projects/tour cover.png';
 import secureSwipePreview from '../assets/projects/fingerprint.png';
 import neptuneGymPreview from '../assets/projects/Neptune Gym.jpg';
 import campusConnectPreview from '../assets/projects/CampusConnect.jpg';
-import amirulPortfolioPreview from '../assets/projects/amirul-portfolio.png';
-import galleryCafePreview from '../assets/projects/gallery-cafe.png';
+import amirulPortfolioPreview from '../assets/projects/AmirulPortfolio.png';
+import galleryCafePreview from '../assets/projects/175 Cfae.png';
 
 const ProjectDetails = () => {
     const { id } = useParams();
