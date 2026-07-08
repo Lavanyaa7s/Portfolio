@@ -11,9 +11,10 @@ const Navbar = () => {
         { name: 'Home', path: '/' },
         { name: 'About', path: '/about' },
         { name: 'Journey', path: '/journey' },
-        { name: 'Gallery', path: '/gallery' },
         { name: 'Projects', path: '/projects' },
         { name: 'Skills', path: '/skills' },
+        { name: 'Certificates', path: '/certificates' },
+        { name: 'Gallery', path: '/gallery' },
         { name: 'Contact', path: '/contact' },
     ];
 
@@ -32,14 +33,14 @@ const Navbar = () => {
                 </Link>
 
                 {/* Desktop Menu */}
-                <ul className="hidden md:flex gap-1 items-center">
+                <ul className="hidden md:flex gap-0.5 lg:gap-1 items-center">
                     {links.map((link) => {
                         const isActive = location.pathname === link.path;
                         return (
                             <li key={link.name}>
                                 <Link
                                     to={link.path}
-                                    className={`text-sm font-medium transition-colors px-4 py-1.5 rounded-full relative block ${
+                                    className={`text-xs lg:text-sm font-medium transition-colors px-2.5 lg:px-4 py-1.5 rounded-full relative block ${
                                         isActive ? 'text-white' : 'text-slate-600 hover:text-black'
                                     }`}
                                 >

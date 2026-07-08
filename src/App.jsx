@@ -9,6 +9,7 @@ import Journey from './pages/Journey';
 import Gallery from './pages/Gallery';
 import Projects from './pages/Projects';
 import Skills from './pages/Skills';
+import Certificates from './pages/Certificates';
 import ProjectDetails from './pages/ProjectDetails';
 import Contact from './pages/Contact';
 import './App.css';
@@ -40,6 +41,7 @@ function App() {
               <Route path="gallery" element={<Gallery />} />
               <Route path="projects" element={<Projects />} />
               <Route path="skills" element={<Skills />} />
+              <Route path="certificates" element={<Certificates />} />
               <Route path="project/:id" element={<ProjectDetails />} />
               <Route path="contact" element={<Contact />} />
             </Route>
