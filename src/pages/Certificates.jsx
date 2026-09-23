@@ -1,13 +1,25 @@
 import { motion } from 'framer-motion';
-import { Award, Trophy, Sparkles, ExternalLink, CheckCircle2 } from 'lucide-react';
+import { Award, Trophy, Sparkles, ExternalLink, CheckCircle2, FileText, Database } from 'lucide-react';
 import dtixCertImg from '../assets/Certs/dTIX COMPETITION.jpg';
 import aiRoadshowCertImg from '../assets/Certs/The Campus AI Roadshow.jpg';
+import oracleCertPdf from '../assets/Certs/LAVANYAA A_P SELAPAN.pdf';
 import deanListImg from '../assets/dean_list.jpeg';
 
 const Certificates = () => {
     const certificates = [
         {
             id: 1,
+            title: 'Database Foundations',
+            issuer: 'Oracle Academy',
+            date: '21 August 2026',
+            category: 'Database & Cloud',
+            description: 'Award of Completion for satisfactory completion of all coursework in Database Foundations under Oracle Academy Instructor Syahida Mohtar.',
+            file: oracleCertPdf,
+            isPdf: true,
+            icon: <Database size={24} className="text-red-500" />
+        },
+        {
+            id: 2,
             title: 'dTIX Competition',
             issuer: 'Digital Technology & Innovation Competition',
             date: '2024 / Achievement',
@@ -17,7 +29,7 @@ const Certificates = () => {
             icon: <Trophy size={24} className="text-amber-500" />
         },
         {
-            id: 2,
+            id: 3,
             title: 'The Campus AI Roadshow',
             issuer: 'University AI Roadshow & Workshop',
             date: '2024 / Participation',
@@ -27,7 +39,7 @@ const Certificates = () => {
             icon: <Sparkles size={24} className="text-violet-600" />
         },
         {
-            id: 3,
+            id: 4,
             title: "Dean's List Award",
             issuer: "Universiti Teknikal Malaysia Melaka (UTeM)",
             date: 'Academic Excellence',
@@ -37,7 +49,7 @@ const Certificates = () => {
             icon: <Award size={24} className="text-blue-600" />
         },
         {
-            id: 4,
+            id: 5,
             title: 'Diploma in Information Technology',
             issuer: 'Politeknik Sultan Idris Shah, Sabak Bernam',
             date: '2021 - 2024',
@@ -68,14 +80,14 @@ const Certificates = () => {
                 </div>
 
                 {/* Bento Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                     {certificates.map((cert, index) => (
                         <motion.div
                             key={cert.id}
                             initial={{ opacity: 0, y: 15 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
+                            transition={{ delay: index * 0.08 }}
                             className="glass-panel p-6 md:p-8 bg-white shadow-sm hover:shadow-md transition-all flex flex-col justify-between border border-black/5 rounded-3xl group"
                         >
                             <div>
@@ -95,7 +107,7 @@ const Certificates = () => {
                                         href={cert.image}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="block h-52 sm:h-64 overflow-hidden rounded-2xl mb-6 bg-gray-100 relative border border-black/5 group/img shadow-inner"
+                                        className="block h-52 sm:h-60 overflow-hidden rounded-2xl mb-6 bg-gray-100 relative border border-black/5 group/img shadow-inner"
                                     >
                                         <img
                                             src={cert.image}
@@ -105,6 +117,21 @@ const Certificates = () => {
                                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center text-white text-sm font-semibold backdrop-blur-[2px]">
                                             Click to view full certificate ↗
                                         </div>
+                                    </a>
+                                )}
+
+                                {cert.isPdf && (
+                                    <a
+                                        href={cert.file}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block h-52 sm:h-60 rounded-2xl mb-6 bg-gradient-to-br from-red-50/40 via-gray-50 to-gray-100 border border-black/5 flex flex-col items-center justify-center p-6 text-center group/pdf shadow-inner hover:bg-gray-100 transition-all"
+                                    >
+                                        <div className="w-16 h-16 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center mb-3 group-hover/pdf:scale-110 transition-transform shadow-sm">
+                                            <FileText size={32} />
+                                        </div>
+                                        <span className="text-base font-bold text-[#111111]">{cert.title}</span>
+                                        <span className="text-xs font-semibold text-slate-500 mt-1">Official PDF Document • Click to open ↗</span>
                                     </a>
                                 )}
 
@@ -118,7 +145,17 @@ const Certificates = () => {
 
                             {/* Actions */}
                             <div className="pt-4 border-t border-black/5 flex items-center gap-3">
-                                {cert.image ? (
+                                {cert.file ? (
+                                    <a
+                                        href={cert.file}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-full btn btn-primary py-3 text-sm flex items-center justify-center gap-2 shadow-sm hover:shadow"
+                                    >
+                                        <span>View PDF Certificate</span>
+                                        <ExternalLink size={16} />
+                                    </a>
+                                ) : cert.image ? (
                                     <a
                                         href={cert.image}
                                         target="_blank"
