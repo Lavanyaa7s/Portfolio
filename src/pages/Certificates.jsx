@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { Award, Trophy, Sparkles, ExternalLink, CheckCircle2, FileText, Database } from 'lucide-react';
+import { Award, Trophy, Sparkles, ExternalLink, CheckCircle2, Database } from 'lucide-react';
+import oracleCertImg from '../assets/Certs/LAVANYAA A_P SELAPAN_page-0001.jpg';
 import dtixCertImg from '../assets/Certs/dTIX COMPETITION.jpg';
 import aiRoadshowCertImg from '../assets/Certs/The Campus AI Roadshow.jpg';
-import oracleCertPdf from '../assets/Certs/LAVANYAA A_P SELAPAN.pdf';
 import deanListImg from '../assets/dean_list.jpeg';
 
 const Certificates = () => {
@@ -14,8 +14,7 @@ const Certificates = () => {
             date: '21 August 2026',
             category: 'Database & Cloud',
             description: 'Award of Completion for satisfactory completion of all coursework in Database Foundations under Oracle Academy Instructor Syahida Mohtar.',
-            file: oracleCertPdf,
-            isPdf: true,
+            image: oracleCertImg,
             icon: <Database size={24} className="text-red-500" />
         },
         {
@@ -120,21 +119,6 @@ const Certificates = () => {
                                     </a>
                                 )}
 
-                                {cert.isPdf && (
-                                    <a
-                                        href={cert.file}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="block h-52 sm:h-60 rounded-2xl mb-6 bg-gradient-to-br from-red-50/40 via-gray-50 to-gray-100 border border-black/5 flex flex-col items-center justify-center p-6 text-center group/pdf shadow-inner hover:bg-gray-100 transition-all"
-                                    >
-                                        <div className="w-16 h-16 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center mb-3 group-hover/pdf:scale-110 transition-transform shadow-sm">
-                                            <FileText size={32} />
-                                        </div>
-                                        <span className="text-base font-bold text-[#111111]">{cert.title}</span>
-                                        <span className="text-xs font-semibold text-slate-500 mt-1">Official PDF Document • Click to open ↗</span>
-                                    </a>
-                                )}
-
                                 {/* Content */}
                                 <h3 className="text-2xl font-bold text-[#111111] mb-2 leading-snug">{cert.title}</h3>
                                 <p className="text-xs font-bold text-slate-400 mb-3 uppercase tracking-wider">{cert.issuer} • {cert.date}</p>
@@ -145,17 +129,7 @@ const Certificates = () => {
 
                             {/* Actions */}
                             <div className="pt-4 border-t border-black/5 flex items-center gap-3">
-                                {cert.file ? (
-                                    <a
-                                        href={cert.file}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="w-full btn btn-primary py-3 text-sm flex items-center justify-center gap-2 shadow-sm hover:shadow"
-                                    >
-                                        <span>View PDF Certificate</span>
-                                        <ExternalLink size={16} />
-                                    </a>
-                                ) : cert.image ? (
+                                {cert.image ? (
                                     <a
                                         href={cert.image}
                                         target="_blank"
